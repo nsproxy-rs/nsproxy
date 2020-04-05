@@ -1,5 +1,5 @@
-extern crate clap;
-// use clap::[App, Arg];
+use clap;
+use std::env;
 
 struct CliArgs {
     target_path: String,
@@ -12,6 +12,7 @@ fn parse_cli() -> CliArgs {
     let program_author = "Not guy";
     let target_arg_name = "target";
     let config_arg_name = "config";
+    let default_config_path = env::current_dir().unwrap().as_path().join("rproxy.conf");
 
     let matches = clap::App::new(program_name)
     .version(program_version)
@@ -23,12 +24,13 @@ fn parse_cli() -> CliArgs {
     .arg(clap::Arg::with_name(config_arg_name)
         .help("configuration path")
         .required(false)
-        .index(2))
+        .index(2)
+        .default_value(default_config_path.to_str().unwrap()))
     .get_matches();
 
     CliArgs {
         target_path: String::from(matches.value_of(target_arg_name).unwrap()),
-        config_path: String::from(matches.value_of(config_arg_name).unwrap_or("/etc/rproxy/rproxy.conf"))
+        config_path: String::from(matches.value_of(config_arg_name).unwrap()),
     }
 }
 
