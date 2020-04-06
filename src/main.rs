@@ -13,7 +13,7 @@ fn parse_cli() -> CliArgs {
 
     let matches = clap::App::new("nsproxy")
     .version("0.1.0")
-    .author("Guy Bortnikov, Shay Sandler")
+    .author("Guy Bortnikov, Liran Ringel, Shay Sandler")
     .arg(clap::Arg::with_name(target_arg_name)
         .help("target program (binary) to run under nsproxy")
         .required(true)
