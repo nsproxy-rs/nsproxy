@@ -8,3 +8,10 @@ edition = "2018"
 
 [dependencies]
 clap = "~2.27.0"
+tokio = {version = "0.2", features = ["full"]}
+trust-dns-proto = {version = "0.19"}
+log = "0.4"
+env_logger = "0.7"
+
+[dev-dependencies]
+trust-dns-client = "0.19"

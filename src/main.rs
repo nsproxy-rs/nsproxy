@@ -3,9 +3,11 @@ use std::env;
 
 
 mod config;
-mod routing;
+mod dns_server;
+mod mapping;
 mod ns;
 mod proxy;
+mod routing;
 
 struct CliArgs {
     target_path: String,
