@@ -1,27 +1,27 @@
-enum ProxyMethod {
+pub enum ProxyMethod {
     StrictChain,
     DynamicChain,
 }
 
-enum ProxyProtocol {
+pub enum ProxyProtocol {
     Socks5,
     Socks4,
     Http,
 }
 
-struct Auth {
+pub struct Auth {
     username: std::string::String,
     password: std::string::String,
 }
 
-struct ProxyConfig {
+pub struct ProxyConfig {
     protocol: ProxyProtocol,
     address: std::string::String,
     port: u16,
     auth: Auth,
 }
 
-struct Config {
+pub struct Config {
     method: ProxyMethod,
     proxies: Vec<ProxyConfig>,
 }
