@@ -10,13 +10,13 @@ pub enum ProxyProtocol {
 }
 
 pub struct Auth {
-    username: std::string::String,
-    password: std::string::String,
+    username: String,
+    password: String,
 }
 
 pub struct ProxyConfig {
     protocol: ProxyProtocol,
-    address: std::string::String,
+    address: String,
     port: u16,
     auth: Auth,
 }
