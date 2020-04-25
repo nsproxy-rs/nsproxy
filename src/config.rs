@@ -10,18 +10,18 @@ pub enum ProxyProtocol {
 }
 
 pub struct Auth {
-    username: String,
-    password: String,
+    pub username: String,
+    pub password: String,
 }
 
 pub struct ProxyConfig {
-    protocol: ProxyProtocol,
-    address: String,
-    port: u16,
-    auth: Auth,
+    pub protocol: ProxyProtocol,
+    pub address: String,
+    pub port: u16,
+    pub auth: Auth,
 }
 
 pub struct Config {
-    method: ProxyMethod,
-    proxies: Vec<ProxyConfig>,
+    pub method: ProxyMethod,
+    pub proxies: Vec<ProxyConfig>,
 }
